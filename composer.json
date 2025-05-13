@@ -2,7 +2,7 @@
     "name": "gzqianchong/php-laravel-sdk",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "stable",
+    "version": "1.0.4",
     "require": {
         "php": "^8.0",
         "illuminate/support": "^10.0"
