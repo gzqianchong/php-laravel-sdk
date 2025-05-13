@@ -1,0 +1,9 @@
+{
+    "name": "gzqianchong/php-laravel-sdk",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
