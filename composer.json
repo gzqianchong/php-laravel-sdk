@@ -1,5 +1,6 @@
 {
     "name": "gzqianchong/php-laravel-sdk",
+    "license": "MIT",
     "require": {},
     "autoload": {
         "psr-4": {
