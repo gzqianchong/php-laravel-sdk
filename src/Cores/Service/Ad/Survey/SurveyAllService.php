@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Cores\Service\Ad\Survey;
+namespace Sdk\Cores\Service\Ad\Survey;
 
-use App\Cores\Service\Service;
+use Sdk\Cores\Service\Service;
 
 class SurveyAllService extends Service
 {

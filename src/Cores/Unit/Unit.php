@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Cores\Units;
+namespace Sdk\Cores\Units;
 
-use App\Cores\Core;
+use Sdk\Cores\Core;
 
 abstract class Unit extends Core
 {

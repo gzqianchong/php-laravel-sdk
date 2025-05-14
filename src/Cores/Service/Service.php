@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Cores\Service;
+namespace Sdk\Cores\Service;
 
-use App\Cores\Core;
+use Sdk\Cores\Core;
 use Illuminate\Support\Facades\Http;
 
 abstract class Service extends Core

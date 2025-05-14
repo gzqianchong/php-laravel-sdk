@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Cores\Features;
+namespace Sdk\Cores\Features;
 
-use App\Cores\Core;
+use Sdk\Cores\Core;
 use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;

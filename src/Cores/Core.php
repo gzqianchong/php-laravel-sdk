@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Cores;
+namespace Sdk\Cores;
 
 use Exception;
 use Illuminate\Support\Arr;
