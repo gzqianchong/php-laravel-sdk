@@ -1,6 +1,6 @@
 <?php
 
-namespace Sdk\Cores\Service\Ad\Survey;
+namespace Sdk\Cores\Service\Common\Media;
 
 use Sdk\Cores\Service\Service;
 
