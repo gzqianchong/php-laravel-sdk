@@ -31,7 +31,7 @@ abstract class Service extends Core
     protected function http()
     {
         $url = trim($this->host(), '/') . '/' . trim($this->path(), '/');
-        $body = $this->data->getItem('body');
+        $body = (array) $this->data->getItem('body');
         $http = Http::post($url, $body);
         $this->data->setItem('httpResponses', $http->json());
     }
