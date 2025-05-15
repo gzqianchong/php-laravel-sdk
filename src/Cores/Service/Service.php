@@ -2,6 +2,7 @@
 
 namespace Sdk\Cores\Service;
 
+use Illuminate\Support\Str;
 use Sdk\Cores\Core;
 use Illuminate\Support\Facades\Http;
 
@@ -36,8 +37,26 @@ abstract class Service extends Core
         $this->data->setItem('httpResponses', $http->json());
     }
 
-    public function getHttpResponses()
+    public function getHttpResponses($camel = true)
     {
-        return (array) $this->data->getItem('httpResponses');
+        $data = (array) $this->data->getItem('httpResponses');
+        if ($camel) {
+            $data = $this->camel($data);
+        }
+        return $data;
+    }
+
+    final protected function camel($array)
+    {
+        $results = [];
+        foreach ($array as $key => $value) {
+            $camelKey = Str::camel($key);
+            if (is_array($value) && !empty($value)) {
+                $results[$camelKey] = $this->camel($value);
+            } else {
+                $results[$camelKey] = $value;
+            }
+        }
+        return $results;
     }
 }
