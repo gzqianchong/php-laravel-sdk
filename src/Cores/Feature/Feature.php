@@ -106,12 +106,15 @@ abstract class Feature extends Core
 
     protected function setResponses($data = [])
     {
-        $data = $this->camel($data);
         $this->data->setItem('responses', $data);
     }
 
-    public function getResponses()
+    public function getResponses($camel = true)
     {
-        return (array) $this->data->getItem('responses');
+        $data = (array) $this->data->getItem('responses');
+        if ($camel) {
+            $data = $this->camel($data);
+        }
+        return $data;
     }
 }
