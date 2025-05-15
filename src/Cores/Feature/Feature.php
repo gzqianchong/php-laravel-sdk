@@ -1,6 +1,6 @@
 <?php
 
-namespace Sdk\Cores\Features;
+namespace Sdk\Cores\Feature;
 
 use Sdk\Cores\Core;
 use Exception;

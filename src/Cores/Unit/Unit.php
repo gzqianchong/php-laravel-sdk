@@ -1,6 +1,6 @@
 <?php
 
-namespace Sdk\Cores\Units;
+namespace Sdk\Cores\Unit;
 
 use Sdk\Cores\Core;
 
