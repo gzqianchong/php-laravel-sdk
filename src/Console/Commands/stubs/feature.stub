@@ -1,0 +1,13 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Cores\Feature\Feature;
+
+class {{ class }} extends Feature
+{
+    protected function execute()
+    {
+        //
+    }
+}

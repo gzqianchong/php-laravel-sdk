@@ -1,0 +1,37 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Cores\Unit\Unit;
+use App\Models\{{ modelName }};
+use Exception;
+use Illuminate\Support\Arr;
+
+class {{ class }} extends Unit
+{
+{{ fieldRequest }}
+    /**
+     * @throws Exception
+     */
+    protected function execute()
+    {
+        $data = Arr::whereNotNull((array) $this->data->getItem('{{ modelCamelName }}'));
+        if ($this->data->hasItem('{{ modelCamelName }}.id')) {
+            $model = {{ modelName }}::query()
+                ->withoutGlobalScopes()
+                ->findOrFail($this->data->getItemRequired('{{ modelCamelName }}.id'));
+            Arr::forget($data, 'id');
+        } else {
+            $model = {{ modelName }}::withTrashed()
+                ->withoutGlobalScopes()
+                ->firstOrNew([
+                    'organization_id' => $this->data->getItemRequired('{{ modelCamelName }}.organization_id'),
+                    //
+                ]);
+        }
+        $model->fill($data);
+        $model->save();
+        $this->data->setItem('{{ modelCamelName }}', $model->toArray());
+    }
+ {{ fieldResponse }}
+}

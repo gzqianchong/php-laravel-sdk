@@ -1,0 +1,19 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Cores\Feature\Feature;
+use App\Models\{{ modelName }};
+
+class {{ class }} extends Feature
+{
+    protected function execute()
+    {
+        $model = {{ modelName }}::query();
+        $model = $model->find($this->data->getItemRequired('id'));
+        if (empty($model)) {
+            throw new Exception('查无数据');
+        }
+        $this->success($model->toArray());
+    }
+}

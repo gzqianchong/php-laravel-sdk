@@ -1,0 +1,73 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Cores\Feature\Api\{{ modelName }}\{{ modelName }}AllFeature;
+use App\Cores\Feature\Api\{{ modelName }}\{{ modelName }}CreateFeature;
+use App\Cores\Feature\Api\{{ modelName }}\{{ modelName }}DetailFeature;
+use App\Cores\Feature\Api\{{ modelName }}\{{ modelName }}GetFeature;
+use App\Cores\Feature\Api\{{ modelName }}\{{ modelName }}UpdateFeature;
+use Exception;
+
+class {{ class }} extends ApiController
+{
+   /**
+    * @throws Exception
+    */
+   public function get()
+   {
+       $responses = {{ modelName }}GetFeature::init()
+           ->setRequests($this->getParams())
+           ->run()
+           ->getResponses();
+       $this->response($responses);
+   }
+
+   /**
+    * @throws Exception
+    */
+   public function create()
+   {
+       $responses = {{ modelName }}CreateFeature::init()
+           ->setRequests($this->getParams())
+           ->run()
+           ->getResponses();
+       $this->response($responses);
+   }
+
+   /**
+    * @throws Exception
+    */
+   public function update()
+   {
+       $responses = {{ modelName }}UpdateFeature::init()
+           ->setRequests($this->getParams())
+           ->run()
+           ->getResponses();
+       $this->response($responses);
+   }
+
+   /**
+    * @throws Exception
+    */
+   public function detail()
+   {
+       $responses = {{ modelName }}DetailFeature::init()
+           ->setRequests($this->getParams())
+           ->run()
+           ->getResponses();
+       $this->response($responses);
+   }
+
+   /**
+    * @throws Exception
+    */
+   public function all()
+   {
+       $responses = {{ modelName }}AllFeature::init()
+           ->setRequests($this->getParams())
+           ->run()
+           ->getResponses();
+       $this->response($responses);
+   }
+}

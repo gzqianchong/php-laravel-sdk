@@ -1,0 +1,18 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Cores\Feature\Feature;
+use App\Cores\Unit\{{ modelName }}\{{ modelName }}SaveUnit;
+
+class {{ class }} extends Feature
+{
+    protected function execute()
+    {
+        $responses = {{ modelName }}SaveUnit::init()
+            ->setRequests($this->data->getItem('{{ modelCamelName }}'))
+            ->run()
+            ->getResponses();
+        $this->success($responses);
+    }
+}

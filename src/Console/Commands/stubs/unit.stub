@@ -1,0 +1,13 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Cores\Unit\Unit;
+
+class {{ class }} extends Unit
+{
+    protected function execute()
+    {
+        //
+    }
+}

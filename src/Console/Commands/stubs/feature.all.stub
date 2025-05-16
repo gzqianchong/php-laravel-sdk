@@ -1,0 +1,17 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Cores\Feature\Feature;
+use App\Models\{{ modelName }};
+
+class {{ class }} extends Feature
+{
+    protected function execute()
+    {
+        $model = {{ modelName }}::query();
+        $model->orderByDesc('id');
+        $model = $model->get();
+        $this->success($model->toArray());
+    }
+}

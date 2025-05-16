@@ -10,5 +10,12 @@
         "psr-4": {
             "Sdk\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sdk\\Providers\\SdkServiceProvider"
+            ]
+        }
     }
 }
