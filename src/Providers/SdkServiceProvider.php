@@ -2,11 +2,11 @@
 
 namespace Sdk\Providers;
 
-use App\Console\Commands\ModuleMake;
 use Illuminate\Support\ServiceProvider;
 use Sdk\Console\Commands\ControllerMake;
 use Sdk\Console\Commands\FeatureMake;
 use Sdk\Console\Commands\UnitMake;
+use Sdk\Console\Commands\ModuleMake;
 
 class SdkServiceProvider extends ServiceProvider
 {
