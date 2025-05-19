@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class ModuleMake extends Command
 {
-    protected $signature = 'make:module {name?} {{--api}}';
+    protected $signature = 'make:module {name?} {module?}';
 
     protected $description = 'Command description';
 
@@ -33,9 +33,9 @@ class ModuleMake extends Command
             'name' => $name . '\\' . $name . 'SaveUnit',
             '--modelSave' => true,
         ]);
-        $module = 'Api';
-        if ($this->option('api')) {
-            $module = 'Api';
+        $module = '';
+        if ($this->argument('module')) {
+            $module = Str::studly($this->argument('module'));
         }
         if (!empty($module)) {
             $this->call('make:feature', [
@@ -58,7 +58,6 @@ class ModuleMake extends Command
                 'name' => $module . '\\' . $name . '\\' . $name . 'AllFeature',
                 '--httpAll' => true,
             ]);
-
             $this->call('make:controller', [
                 'name' => $module . '\\' . $name . 'Controller',
             ]);

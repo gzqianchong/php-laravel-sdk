@@ -9,7 +9,7 @@ use App\Cores\Feature\Api\{{ modelName }}\{{ modelName }}GetFeature;
 use App\Cores\Feature\Api\{{ modelName }}\{{ modelName }}UpdateFeature;
 use Exception;
 
-class {{ class }} extends ApiController
+class {{ class }} extends {{ moduleName }}Controller
 {
    /**
     * @throws Exception

@@ -34,9 +34,11 @@ class ControllerMake extends GeneratorCommand
     {
         $name = $this->argument('name');
         $modelName = Str::before(Str::afterLast($name, '\\'), 'Controller');
+        $moduleName = Str::before($name, '\\');
         $modelCamelName = Str::camel($modelName);
         $stub = str_replace(['{{ modelName }}'], $modelName, $stub);
         $stub = str_replace(['{{ modelCamelName }}'], $modelCamelName, $stub);
+        $stub = str_replace(['{{ moduleName }}'], $moduleName, $stub);
         return parent::replaceClass($stub, $name);
     }
 }
