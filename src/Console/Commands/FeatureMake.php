@@ -68,11 +68,16 @@ class FeatureMake extends GeneratorCommand
             $name = $this->argument('name');
             $modelName = Str::before(Str::afterLast($name, '\\'), 'GetFeature');
             $stub = str_replace(['{{ modelName }}'], $modelName, $stub);
+            $modelCamelName = Str::camel($modelName);
+            $stub = str_replace(['{{ modelName }}'], $modelName, $stub);
+            $stub = str_replace(['{{ modelCamelName }}'], $modelCamelName, $stub);
         }
         if ($this->option('httpCreate')) {
             $name = $this->argument('name');
             $modelName = Str::before(Str::afterLast($name, '\\'), 'CreateFeature');
+            $modelCamelName = Str::camel($modelName);
             $stub = str_replace(['{{ modelName }}'], $modelName, $stub);
+            $stub = str_replace(['{{ modelCamelName }}'], $modelCamelName, $stub);
         }
         if ($this->option('httpUpdate')) {
             $name = $this->argument('name');
